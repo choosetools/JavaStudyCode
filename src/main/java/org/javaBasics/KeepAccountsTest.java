@@ -87,7 +87,7 @@ public class KeepAccountsTest {
         return balance;
     }
 
-    private static String verifyAndGetInput(Scanner scanner) {
+   private static String verifyAndGetInput(Scanner scanner) {
         String input;
         while (true) {
              input = scanner.next();
