@@ -28,16 +28,7 @@ public class KeepAccountsTest {
             System.out.print("\n\t\t请选择（1-4）：");
 
             String input;
-            while (true) {
-                 input = scanner.next();
-                //判断输入的是否为1-4的数字
-                if (!input.matches("[1-4]")) {
-                    System.out.print("输入错误，请重新输入：");
-                    continue;
-                }
-                break;
-
-            }
+            input = verifyAndGetInput(scanner);
             switch (input){
                 case "1":
                     System.out.println("--------------当前收支明细记录-------------");
@@ -49,45 +40,16 @@ public class KeepAccountsTest {
                     break;
                 case "2":
                     System.out.print("本次收入金额：");
-                    String incomeString;
-                    while (true){
-                        incomeString = scanner.next();
-                        //验证是否是数字，包括小数
-                        if (!incomeString.matches("\\d+(\\.\\d+)?")) {
-                        System.out.print("输入错误，请重新输入：");
-                        }else {
-                            break;
-                        }
-                    }
-                    situation = new IncomeExpenditureSituation();
-                    situation.setMoney(BigDecimal.valueOf(Double.parseDouble(incomeString)));
+                    String incomeString = getIncomeOrExpenditure(scanner);
                     System.out.print("本次收入说明：");
-                    situation.setDescription(scanner.next());
-                    balance = balance.add(situation.getMoney());
-                    situation.setBalance(balance);
-                    situation.setIncomeExpenditure(IncomeExpenditure.INCOME);
-                    arrayList.add(situation);
+                    balance = getAndSetBalance(incomeString, scanner, balance, arrayList, "1");
                     System.out.println("收入记录成功！");
                     break;
                 case "3":
                     System.out.print("本次支出金额：");
-                    String expendString;
-                    while (true){
-                        expendString = scanner.next();
-                        if (!expendString.matches("\\d+(\\.\\d+)?")) {
-                        System.out.print("输入错误，请重新输入：");
-                        }else {
-                            break;
-                        }
-                    }
-                    situation = new IncomeExpenditureSituation();
-                    situation.setMoney(BigDecimal.valueOf(Double.parseDouble(expendString)));
+                    String expendString = getIncomeOrExpenditure(scanner);
                     System.out.print("本次支出说明：");
-                    situation.setDescription(scanner.next());
-                    balance = balance.subtract(situation.getMoney());
-                    situation.setBalance(balance);
-                    situation.setIncomeExpenditure(IncomeExpenditure.EXPENDITURE);
-                    arrayList.add(situation);
+                    balance = getAndSetBalance(expendString, scanner, balance, arrayList,"0");
                     System.out.println("支出记录成功！");
                     break;
                 case "4":
@@ -107,6 +69,50 @@ public class KeepAccountsTest {
             }
         }
 
+    }
+
+    private static BigDecimal getAndSetBalance(String inputOrExpendString, Scanner scanner, BigDecimal balance, ArrayList<IncomeExpenditureSituation> arrayList, String whetherInputOrExpend) {
+        IncomeExpenditureSituation situation;
+        situation = new IncomeExpenditureSituation();
+        situation.setMoney(BigDecimal.valueOf(Double.parseDouble(inputOrExpendString)));
+        situation.setDescription(scanner.next());
+        if ("0".equals(whetherInputOrExpend)) {
+            balance = balance.subtract(situation.getMoney());
+        }else {
+            balance = balance.add(situation.getMoney());
+        }
+        situation.setBalance(balance);
+        situation.setIncomeExpenditure(IncomeExpenditure.EXPENDITURE);
+        arrayList.add(situation);
+        return balance;
+    }
+
+    private static String verifyAndGetInput(Scanner scanner) {
+        String input;
+        while (true) {
+             input = scanner.next();
+            //判断输入的是否为1-4的数字
+            if (!input.matches("[1-4]")) {
+                System.out.print("输入错误，请重新输入：");
+                continue;
+            }
+            break;
+        }
+        return input;
+    }
+
+    private static String getIncomeOrExpenditure(Scanner scanner) {
+        String incomeString;
+        while (true){
+            incomeString = scanner.next();
+            //验证是否是数字，包括小数
+            if (!incomeString.matches("\\d+(\\.\\d+)?")) {
+            System.out.print("输入错误，请重新输入：");
+            }else {
+                break;
+            }
+        }
+        return incomeString;
     }
 }
 
