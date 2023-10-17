@@ -13,6 +13,7 @@ import java.util.Scanner;
  * @description 谷粒记账功能的实现
  */
 public class KeepAccountsTest {
+
     @Test
     public void test() {
         Scanner scanner = new Scanner(System.in);
