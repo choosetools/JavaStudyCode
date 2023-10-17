@@ -5,9 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="507b7f76-6d08-4f4d-b50a-544164eecb9e" name="更改" comment="输出100000以内所有的质数">
-      <change afterPath="$PROJECT_DIR$/.idea/leetcode/editor.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/leetcode/editor.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/javaBasics/KeepAccountsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/javaBasics/KeepAccountsTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/org/javaBasics/IncomeExpenditure.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/org/javaBasics/KeepAccountsTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/main/java/org/javaBasics/OutputPrimeTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,7 +41,9 @@
         <entry key="$PROJECT_DIR$" value="cheng" />
       </map>
     </option>
+    <option name="RECENT_COMMON_BRANCH" value="master" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="SYNC" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
@@ -48,6 +63,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "cheng",
+    "last_opened_file_path": "C:/Users/14036/Desktop/代码/JavaStudyCode",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -123,8 +139,8 @@
         <item itemvalue="应用程序.OutputPrimeTest" />
         <item itemvalue="JUnit.KeepAccountsTest.test" />
         <item itemvalue="JUnit.KeepAccountsTest" />
+        <item itemvalue="应用程序.OutputPrimeTest" />
         <item itemvalue="JUnit.KeepAccountsTest.test" />
-        <item itemvalue="JUnit.KeepAccountsTest" />
       </list>
     </recent_temporary>
   </component>
@@ -142,6 +158,7 @@
       <workItem from="1697458564587" duration="668000" />
       <workItem from="1697463223270" duration="1521000" />
       <workItem from="1697465870938" duration="414000" />
+      <workItem from="1697504003070" duration="969000" />
     </task>
     <task id="LOCAL-00001" summary="谷粒记账功能：封装了一些方法">
       <option name="closed" value="true" />
