@@ -12,7 +12,11 @@ import java.util.Scanner;
  * @description 谷粒记账功能的实现
  */
 public class KeepAccountsTest {
+    public static IncomeExpenditureSituation test;
 
+    public static void main(String[] args) {
+        System.out.println(test);
+    }
     @Test
     public void test() {
         Scanner scanner = new Scanner(System.in);
