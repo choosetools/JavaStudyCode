@@ -292,8 +292,32 @@ public class TwoDimensionalArrayTest {
         System.out.println(Arrays.toString(newArr));
     }
 
+    //二分法查找，就是从中间开始往两边找
+    //二分法前提条件是数组是有序的，基于数组的有序才能使用二分法
     @Test
     public void test12(){
-
+        int[] arr = new int[]{2, 4, 5, 8, 12, 15, 19, 26, 37, 49, 51, 66, 89, 100};
+        int num = 5;
+        int head = 0;
+        int end = arr.length - 1;
+        int index = -1;
+        boolean flag = false;
+        while (end >= head) {
+             int mid = (end + head) / 2;
+            if (num == arr[mid]){
+                flag = true;
+                index = mid;
+                break;
+            }else if (num > arr[mid]) {
+                head = mid + 1;
+            } else {
+                end = mid - 1;
+            }
+        }
+        if (flag){
+            System.out.println("找到了对应的数值，索引值为：" + index);
+        }else {
+            System.out.println("没找到");
+        }
     }
 }
