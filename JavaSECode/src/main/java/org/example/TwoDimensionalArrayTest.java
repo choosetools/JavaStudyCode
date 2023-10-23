@@ -320,4 +320,101 @@ public class TwoDimensionalArrayTest {
             System.out.println("没找到");
         }
     }
+
+    @Test
+    public void test13(){
+        int[] arr = {2, 5, 7, 9, 12, 34, 55, 67, 88, 90, 101};
+        int index = binarySearch(arr, 1222);
+        System.out.println(index);
+    }
+
+    //二分法查找，要求数组必须是有序的
+    public int binarySearch(int[] arr, int num){
+        int start = 0;
+        int end = arr.length - 1;
+        while (start <= end){
+            int mid = (start + end) / 2;
+            if (arr[mid] == num){
+                return mid;
+            }else if (arr[mid] > num){
+                end = mid - 1;
+            }else {
+                start = mid + 1;
+            }
+        }
+        return -1;
+    }
+
+    @Test
+    public void test14(){
+        int[] arr = new int[]{2, 4, 5, 2, 7, 4, 7, 8, 1, 5};
+        int[] ints = bubbleSort(arr);
+        System.out.println(Arrays.toString(ints));
+    }
+
+    //冒泡排序
+    public int[] bubbleSort(int[] arr){
+        //一共要比较length - 1轮
+        for (int i = 1; i < arr.length; i++) {
+            boolean flag = true;
+            //为什么要减i呢？
+            //因为冒泡排序每一轮，都会将其中的最大值移动到最后
+            //这样一来，每一轮就不用再去将最后的值纳入比较了
+            //冒泡排序第一轮比较length - 1次，筛选出了最大值放在最后
+            //第二轮比较length - 2次，最后的值不参与比较，筛选出了第二大的值放在倒数第二位
+            //第三轮比较length - 3次，两个最大的值不参与比较...
+
+            //所以冒泡排序的时间复杂度是n²
+            for (int j = 0; j < arr.length - i; j++) {
+                if (arr[j] > arr[j + 1]){
+                    int temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                    flag = false;
+                }
+
+            }
+            //如果一轮数组都没有发生交换，那么说明数组有序
+            if (flag){
+                break;
+            }
+        }
+        return arr;
+    }
+
+    @Test
+    public void test16(){
+        int[] arr = {1, -2, 5, 12, -9, 4, 1, 7, 5, -6, 2, 5};
+        System.out.println(getGreatestSum(arr));
+    }
+
+    public int getGreatestSum(int[] arr){
+        if (arr == null || arr.length == 0){
+            return 0;
+        }
+        int sum = 0;
+        int temp = 0;
+        for (int i = 0; i < arr.length; i++) {
+            temp += arr[i];
+            //当temp小于0时，就将temp重新置为0，这样就不会令负数的temp影响到后续的增加结果
+            if (temp < 0){
+                temp = 0;
+            }
+            if (temp > sum){
+                sum = temp;
+            }
+        }
+        //当数组中只有负数时，取负数中的最大值
+        if (sum == 0){
+            sum = arr[0];
+            for (int i = 0; i < arr.length; i++) {
+                if (sum < arr[i]){
+                    sum = arr[i];
+                }
+            }
+        }
+        return sum;
+    }
+
+
 }
