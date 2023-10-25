@@ -1,4 +1,4 @@
-package org.example;
+package org.example.javabasics;
 
 /**
  * @ClassName FieldTest
