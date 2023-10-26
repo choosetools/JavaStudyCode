@@ -1,5 +1,7 @@
 package org.example.javabasics;
 
+import java.util.Date;
+
 /**
  * @Author cheng
  * @ClassName Circle2
@@ -21,6 +23,8 @@ public class Circle2 {
         method(a, b);
         System.out.println(a);
         System.out.println(b);
+        Date date = new Date();
+        java.sql.Date date1 = new java.sql.Date(10000L);
     }
 
     public static void method(int ... nums){
