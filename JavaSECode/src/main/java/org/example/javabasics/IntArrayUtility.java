@@ -118,6 +118,19 @@ public class IntArrayUtility {
         }
     }
 
+    //数组排序2：可以指明数组排序的方式，0为从大到小，其余按照从小到大进行排序
+    public static void bubbleSort(int[] arr, int sortOrd){
+        for (int i = 0; i < arr.length - 1; i++) {
+            for (int j = 0; j < arr.length - 1 - i; j++) {
+                if (sortOrd == 0){
+
+                }
+            }
+        }
+    }
+
+
+
     //遍历查找
     public static int getIndexOfArr(int[] arr, int num){
         for (int i = 0; i < arr.length; i++) {
