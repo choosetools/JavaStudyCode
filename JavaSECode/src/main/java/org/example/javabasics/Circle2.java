@@ -1,5 +1,7 @@
 package org.example.javabasics;
 
+import org.junit.Test;
+
 import java.util.Date;
 
 /**
@@ -10,6 +12,10 @@ import java.util.Date;
  * @Description
  */
 public class Circle2 {
+    private int privateProperty;
+    int defaultProperty;
+    protected int protectedProperty;
+    public int publicProperty;
     public static void main(String[] args) {
 //        PassObject passObject = new PassObject();
 //        passObject.printAreas(new Circle2(), 8);
@@ -30,6 +36,20 @@ public class Circle2 {
     public static void method(int ... nums){
         nums[0] *= 10;
         nums[1] *= 20;
+    }
+    public void publicMethod(){}
+
+    protected void protectedMethod(){}
+
+    private void privateMethod(){}
+
+    void defaultMethod(){}
+}
+class Circle2Test{
+    @Test
+    public void test(){
+        Circle2 circle2 = new Circle2();
+
     }
 }
 
