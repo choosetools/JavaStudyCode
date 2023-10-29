@@ -1,4 +1,4 @@
-package org.example.javaadvance;
+package org.example.javaadvanced;
 
 import org.junit.Test;
 
