@@ -1,7 +1,5 @@
 package org.example.javaadvanced;
 
-import org.junit.Test;
-
 /**
  * @ClassName: AccountTest
  * @Package: org.example.javaadvance
@@ -10,16 +8,16 @@ import org.junit.Test;
  * @Description: TODO
  */
 public class AccountTest {
-    @Test
-    public void test(){
-        Customer customer = new Customer("Jane","Smith");
-        customer.setAccount(new Account(1000, 2000, 0.0123));
-        Account account = customer.getAccount();
-        account.deposit(100);
-        account.withdraw(960);
-        account.withdraw(2000);
-        System.out.println(customer);
-    }
+//    @Test
+//    public void test(){
+//        Customer customer = new Customer("Jane","Smith");
+//        customer.setAccount(new Account(1000, 2000, 0.0123));
+//        Account account = customer.getAccount();
+//        account.deposit(100);
+//        account.withdraw(960);
+//        account.withdraw(2000);
+//        System.out.println(customer);
+//    }
 }
 class Account{
     private int id;
@@ -69,35 +67,35 @@ class Account{
         System.out.println("成功存入：" + amount);
     }
 }
-class  Customer{
-    private String firstName;
-    private String lastName;
-    private Account account;
-
-    public void setAccount(Account account) {
-        this.account = account;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public Account getAccount() {
-        return account;
-    }
-
-    public Customer(String f, String l){
-        this.firstName = f;
-        this.lastName = l;
-
-    }
-
-    public String toString(){
-        return  "Customer [" + this.firstName + ", " + this.lastName + "] has a account: id is " + this.account.getId() + ", annualInterestRate is " + this.account.getAnnualInterestRate() * 100 + "%, balance is " + this.account.getBalance();
-
-    }
-}
+//class  Customer{
+//    private String firstName;
+//    private String lastName;
+//    private Account account;
+//
+//    public void setAccount(Account account) {
+//        this.account = account;
+//    }
+//
+//    public String getFirstName() {
+//        return firstName;
+//    }
+//
+//    public String getLastName() {
+//        return lastName;
+//    }
+//
+//    public Account getAccount() {
+//        return account;
+//    }
+//
+//    public Customer(String f, String l){
+//        this.firstName = f;
+//        this.lastName = l;
+//
+//    }
+//
+//    public String toString(){
+//        return  "Customer [" + this.firstName + ", " + this.lastName + "] has a account: id is " + this.account.getId() + ", annualInterestRate is " + this.account.getAnnualInterestRate() * 100 + "%, balance is " + this.account.getBalance();
+//
+//    }
+//}
