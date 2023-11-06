@@ -15,5 +15,9 @@ public class CylinderTest {
          Cylinder cylinder = new Cylinder();
         System.out.println(cylinder.getLength());
         System.out.println(cylinder.getRadius());
+        cylinder.setRadius(3);
+        cylinder.setLength(5);
+        System.out.println(cylinder.findVolume());
+        System.out.println(cylinder.findArea());
     }
 }

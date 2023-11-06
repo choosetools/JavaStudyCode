@@ -23,6 +23,12 @@ public class Cylinder extends Circle {
     }
 
     public double findVolume() {
-        return findArea() * this.length;
+        return super.findArea() * this.length;
+    }
+
+    @Override
+    public double findArea(){
+        //圆柱表面积等于侧面积 + 两个圆的面积
+        return (super.findArea() * 2) + (super.getRadius() * 2 * Math.PI * this.length);
     }
 }
