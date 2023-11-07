@@ -1,5 +1,7 @@
 package org.example.testpack;
 
+import org.junit.Test;
+
 /**
  * @Author cheng
  * @ClassName SuperTest
@@ -8,12 +10,52 @@ package org.example.testpack;
  * @Description
  */
 public class SuperTest {
+    @Test
+    public void test(){
+        Son son  = new Son();
+
+    }
 }
 class Parent{
-    public void method(){
-        System.out.println();
+    int age;
+
+    public Parent(int age){
+        this.age = age;
+    }
+
+    public Parent(){
+        System.out.println("父类中的无参构造器");
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
     }
 }
 class Son extends Parent{
+    int age;
 
+    public Son(){
+        //先去调用父类中的无参构造器
+        System.out.println("son类中的无参构造器");
+    }
+
+
+    public Son(int age){
+
+        super(age);
+    }
+
+    @Override
+    public int getAge() {
+        return age;
+    }
+
+    @Override
+    public void setAge(int age) {
+        this.age = age;
+    }
 }

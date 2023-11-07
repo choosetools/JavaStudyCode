@@ -20,4 +20,10 @@ public class Kids extends ManKind{
     public void setYearsOld(int yearsOld) {
         this.yearsOld = yearsOld;
     }
+
+    @Override
+    public void employeed(){
+        super.employeed();
+        System.out.println("but Kids should study and no job");
+    }
 }
