@@ -13,49 +13,39 @@ public class SuperTest {
     @Test
     public void test(){
         Son son  = new Son();
-
+        //这里调用的属性是父类中的属性
+//        son.test();
+        //这里调用的方法却是子类中重写的方法
+        son.print();
     }
 }
 class Parent{
-    int age;
+//    private String name = "Parent";
+//    public String getName() {
+//        return name;
+//    }
 
-    public Parent(int age){
-        this.age = age;
+    public void method(){
+        System.out.println("父类中的method方法");
     }
 
-    public Parent(){
-        System.out.println("父类中的无参构造器");
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
+    public void print(){
+        method();
     }
 }
 class Son extends Parent{
-    int age;
+//    private String name = "Son";
 
-    public Son(){
-        //先去调用父类中的无参构造器
-        System.out.println("son类中的无参构造器");
+
+    public void method(){
+        System.out.println("子类中的method方法");
     }
 
-
-    public Son(int age){
-
-        super(age);
-    }
-
-    @Override
-    public int getAge() {
-        return age;
-    }
-
-    @Override
-    public void setAge(int age) {
-        this.age = age;
-    }
+//    public void test(){
+//        //这里的getName()继承自Parent类中
+//        //由于Son类中没有getName()，那么会去父类中查找
+//        //找到了，返回的name根据就近原则，返回的实际上是父类中的name属性
+//        System.out.println(this.getName());
+//        System.out.println(super.getName());
+//    }
 }
