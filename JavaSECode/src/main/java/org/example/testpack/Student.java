@@ -8,19 +8,17 @@ package org.example.testpack;
  * @Description
  */
 public class Student extends Person{
-    public int age = 2;
-//    @Override
-//    public void method(){
-//        System.out.println("Student类中的method()方法");
-//    }
+//    public int age = 2;
+    @Override
+    public void method(){
+        System.out.println("Student类中的method()方法");
+    }
 
-//    @Override
-//    public int getAge() {
-//        return age;
-//    }
+    public void study(){
+        System.out.println("学生要进行学习");
+    }
 
-//    @Override
-//    public void setAge(int age) {
-//        this.age = age;
-//    }
+    public void exercise(){
+        System.out.println("学生也要运动");
+    }
 }

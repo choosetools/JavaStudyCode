@@ -20,40 +20,57 @@ public class PolymorphismTest {
 //        System.out.println(person.age);
     }
 
-    @Test
-    public void test(){
-        Student student = new Student();
-//        System.out.println(student.getAge());
-    }
+//    @Test
+//    public void test(){
+//        Student student = new Student();
+////        System.out.println(student.getAge());
+//    }
+//
+//    @Test
+//    public void test2(){
+//        Person person = new Student();
+////        System.out.println(person.age);
+//
+//        Student student = (Student) person;
+////        System.out.println(student.age);
+//    }
+//
+//    @Test
+//    public void test3(){
+//        Student student = new Student();
+////        System.out.println(student.age);
+//    }
+//
+//    @Test
+//    public void test4(){
+//        Person person = new Student();
+//        System.out.println(person.age);
+//
+//        Student student = (Student) person;
+////        System.out.println(student.age);
+//    }
+//
+//
+//    @Test
+//    public void test5(){
+//        Person person = new Student();
+//        System.out.println(person.getAge());
+//    }
 
     @Test
-    public void test2(){
-        Person person = new Student();
-        System.out.println(person.age);
+    public void test6(){
+        Animal animal = new Student();
+        animal.method();
+
+        //判断当前的对象是否属于某类（也可以是该类的子类）
+        System.out.println(animal instanceof Student);
+        System.out.println(animal instanceof Person);
+
+        Person person = (Person) animal;
+        person.method();
+        person.exercise();
 
         Student student = (Student) person;
-        System.out.println(student.age);
-    }
-
-    @Test
-    public void test3(){
-        Student student = new Student();
-        System.out.println(student.age);
-    }
-
-    @Test
-    public void test4(){
-        Person person = new Student();
-        System.out.println(person.age);
-
-        Student student = (Student) person;
-        System.out.println(student.age);
-    }
-
-
-    @Test
-    public void test5(){
-        Person person = new Student();
-        System.out.println(person.getAge());
+        student.study();
     }
 }

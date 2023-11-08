@@ -8,5 +8,9 @@ package org.example.testpack;
  * @Description
  */
 public class Animal {
-    public int age = 3;
+//    public int age = 3;
+
+    public void method(){
+        System.out.println("Animal类中的method方法");
+    }
 }
