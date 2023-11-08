@@ -11,18 +11,49 @@ import org.junit.Test;
  */
 public class PolymorphismTest {
     public static void main(String[] args) {
-        Person person = new Student();
-        //这里调用的是子类中重写的的getAge()方法
-        //根据就近原则，返回的值是Student类中的age属性
-        System.out.println(person.getAge());
-
-        //
-        System.out.println(person.age);
+//        Person person = new Student();
+//        //这里调用的是子类中重写的的getAge()方法
+//        //根据就近原则，返回的值是Student类中的age属性
+//        System.out.println(person.getAge());
+//
+//        //
+//        System.out.println(person.age);
     }
 
     @Test
     public void test(){
         Student student = new Student();
-        System.out.println(student.getAge());
+//        System.out.println(student.getAge());
+    }
+
+    @Test
+    public void test2(){
+        Person person = new Student();
+        System.out.println(person.age);
+
+        Student student = (Student) person;
+        System.out.println(student.age);
+    }
+
+    @Test
+    public void test3(){
+        Student student = new Student();
+        System.out.println(student.age);
+    }
+
+    @Test
+    public void test4(){
+        Person person = new Student();
+        System.out.println(person.age);
+
+        Student student = (Student) person;
+        System.out.println(student.age);
+    }
+
+
+    @Test
+    public void test5(){
+        Person person = new Student();
+        System.out.println(person.getAge());
     }
 }
