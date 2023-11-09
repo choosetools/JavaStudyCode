@@ -42,4 +42,12 @@ public class Boy {
             System.out.println("我只能多谈恋爱");
         }
     }
+
+    @Override
+    public String toString() {
+        return "Boy{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                '}';
+    }
 }
