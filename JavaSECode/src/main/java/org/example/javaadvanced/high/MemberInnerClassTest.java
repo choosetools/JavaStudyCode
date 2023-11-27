@@ -13,14 +13,15 @@ public class MemberInnerClassTest {
     @Test
     public void test(){
         Outer outer = new Outer();
-        Outer.Inner inner = outer.getInnerInstance();
-
+        Outer.Inner inner = outer.new Inner();
     }
 }
 class Outer{
     private int outerVariable = 1;
     private int commonVariable = 2;
     private static int outerStaticVariable = 3;
+
+    public static Integer a = 1;
 
 
     /**
