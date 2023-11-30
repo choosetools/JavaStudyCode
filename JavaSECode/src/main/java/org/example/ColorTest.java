@@ -14,5 +14,9 @@ public class ColorTest {
     @Test
     public void test(){
         System.out.println(Color.GREEN);
+        System.out.println(age);
     }
+
+    @Deprecated
+    private int age;
 }

@@ -3,7 +3,7 @@ package org.example.javaadvanced.high;
 /**
  * @ClassName: Color
  * @Package: org.example.javaadvanced.high
- * @Author cheng
+ * @author  cheng
  * @Create 2023/11/27 23:37
  * @Description: TODO
  */
