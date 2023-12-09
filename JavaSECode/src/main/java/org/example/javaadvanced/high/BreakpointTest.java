@@ -2,6 +2,7 @@ package org.example.javaadvanced.high;
 
 import org.junit.Test;
 
+import java.io.Serializable;
 import java.util.Scanner;
 
 /**
@@ -28,4 +29,22 @@ public class BreakpointTest {
         }
         scanner.close();
     }
+}
+
+
+abstract class T1 implements I{
+
+}
+
+
+class T2 extends T1{
+
+    @Override
+    public void method() {
+
+    }
+}
+
+interface I{
+    public void method();
 }
