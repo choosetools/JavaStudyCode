@@ -33,20 +33,24 @@ public class LazySingletonSafeTest extends Thread {
         System.out.println(t1.bank == t2.bank);
     }
 }
-class Bank{
-    private Bank(){}
+
+class Bank {
+    private Bank() {
+    }
+
     private static Bank instance;
 
-    //static方法，默认监视器为Bank.class
-    public static synchronized Bank getInstance(){
-        if (instance == null){
-            try {
-                Thread.sleep(1000);
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
+    public static Bank getInstance() {
+        synchronized (Bank.class) {
+            if (instance == null) {
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
+                instance = new Bank();
             }
-            instance = new Bank();
+            return instance;
         }
-        return instance;
     }
 }
