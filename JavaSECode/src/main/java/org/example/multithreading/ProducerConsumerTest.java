@@ -1,5 +1,8 @@
 package org.example.multithreading;
 
+import java.util.concurrent.Callable;
+import java.util.concurrent.FutureTask;
+
 /**
  * @ClassName: ProducerConsumerTest
  * @Package: org.example.multithreading
@@ -19,6 +22,16 @@ public class ProducerConsumerTest {
         producer.start();
         consumer1.start();
         consumer2.start();
+
+
+        Callable callable = new Callable() {
+            @Override
+            public Object call() throws Exception {
+                System.out.println("call()方法");
+                return null;
+            }
+        };
+        new Thread(new FutureTask<Object>(callable));
     }
 }
 
