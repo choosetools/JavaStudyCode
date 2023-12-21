@@ -5,9 +5,13 @@ import org.junit.Test;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.*;
+import java.time.format.DateTimeFormatter;
+import java.time.format.FormatStyle;
+import java.time.temporal.TemporalAccessor;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Scanner;
+import java.util.Set;
 
 /**
  * @ClassName: DateTimeTest
@@ -262,5 +266,117 @@ public class DateTimeTest {
     }
 
 
+    @Test
+    public void test11(){
+        DateTimeFormatter dtf = DateTimeFormatter.ISO_DATE_TIME;
+        LocalDateTime ldt = LocalDateTime.now();
+        System.out.println(ldt);
+        String format = dtf.format(ldt);
+        System.out.println(format);
+
+    }
+
+    @Test
+    public void test12(){
+        LocalDateTime ldt = LocalDateTime.now();
+        System.out.println(ldt);
+
+        DateTimeFormatter dtf = DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM);
+        System.out.println(dtf.format(ldt));
+    }
+
+    @Test
+    public void test13(){
+        //日期格式化类
+        DateTimeFormatter dtf1 = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+
+        //日期时间类
+        LocalDateTime localDateTime = LocalDateTime.now();
+
+        //格式化：日期 -> 字符串
+        //由于这里创建的DateTimeFormatter对象其中既包含了日期也包含了时间，所以应当使用LocalDateTime对象
+        //如果使用的是日期或时间类，由于不包含另外的信息
+        // 报异常UnsupportedTemporalTypeException
+        System.out.println(dtf1.format(localDateTime));
+
+        //对于LocalDateTime而言
+        //既可以用于只包含日期的格式化
+        //也可以用于只包含时间的格式化
+        //同时也能用于既包含时间也包含日期的格式化
+        DateTimeFormatter dtf2 = DateTimeFormatter.ofPattern("yyyy/MM/dd");
+        System.out.println(dtf2.format(localDateTime));
+
+//        LocalDateTime.from()
+        //格式化2:
+        LocalTime localTime = LocalTime.now();
+        //报异常，原因在于LocalTime中不包含日期信息，无法进行转换
+        //System.out.println(dtf2.format(localTime));
+
+        //解析1：字符串 -> 时间类型
+        //先转换成TemporalAccessor接口类型，该接口是日期时间类的父接口
+        TemporalAccessor temporalAccessor = dtf1.parse("2023-12-21 11:03:53");
+        //然后再调用日期时间类的静态方法from()将TemporalAccessor转换成日期时间类
+        LocalDateTime localDateTime2 = LocalDateTime.from(temporalAccessor);
+        System.out.println(localDateTime2);
+
+        //解析2:异常情况，将包含日期时间的TemporalAccessor转换成只包含日期的类
+        //报：DateTimeParseException异常
+        //LocalDate localDate = LocalDate.from(temporalAccessor);
+
+
+
+
+    }
+
+
+    @Test
+    public void test01() {
+        //需要知道一些时区的id
+        //Set<String>是一个集合，容器
+        Set<String> availableZoneIds = ZoneId.getAvailableZoneIds();
+        //快捷模板iter
+        for (String availableZoneId : availableZoneIds) {
+            System.out.println(availableZoneId);
+        }
+    }
+
+    @Test
+    public void test02(){
+        ZonedDateTime t1 = ZonedDateTime.now();
+        System.out.println(t1);
+
+        ZonedDateTime t2 = ZonedDateTime.now(ZoneId.of("America/New_York"));
+        System.out.println(t2);
+    }
+
+    /**
+     * 百天推算
+     * 使用Calendar获取当前时间，把这个时间设置为你的生日，再获取你百天（出生后100天）日期
+     */
+    @Test
+    public void test03(){
+
+        Calendar calendar = Calendar.getInstance();
+
+        System.out.println(calendar.getTime());
+        calendar.add(Calendar.YEAR, -23);
+        System.out.println(calendar.getTime());
+        calendar.add(Calendar.DAY_OF_YEAR, 100);
+        System.out.println(calendar.getTime());
+
+    }
+
+    @Test
+    public void test04(){
+        LocalDateTime localDateTime = LocalDateTime.now();
+        System.out.println(localDateTime);
+
+        //体现了JDK8新日期时间的不可变性
+        localDateTime = localDateTime.minusYears(23);
+        System.out.println(localDateTime);
+
+        localDateTime = localDateTime.plusDays(100);
+        System.out.println(localDateTime);
+    }
 
 }
